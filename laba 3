@@ -1,0 +1,17 @@
+#include <stdio.h> //laba 3
+#include <math.h>
+
+int main()
+{
+	float x,i,y;
+	for (x = 0; x < 1.1; x = x + 0.1) {		
+		y = cos(x + pow(x, 3));
+		printf(" %f ", x);
+		printf(" %f \n", y);
+	}
+	for (x = 1.1; x < 2.1; x = x + 0.1) {
+		y = exp(-(pow(x, 2))) - pow(x, 2) + 2 * x;
+		printf(" %f ", x);
+		printf(" %f \n", y);
+	}
+}
