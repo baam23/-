@@ -1,0 +1,69 @@
+#include <stdio.h> //laba7
+#include <stdlib.h>
+#include <time.h>
+
+void fill(int n, int m, int a[n][m])
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            a[i][j] = rand() % 101 - 50;
+        }
+    }
+}
+
+void print_double_mas(int n, int m, int a[n][m])
+{
+    float k = 0;
+    for (int i = 0; i < n; i++)
+    {
+        k = 0;
+        for (int j = 0; j < m; j++)
+        {
+            k += a[i][j];
+            printf("%7i", a[i][j]);
+        }
+        printf("   %6f", k / m);
+        printf("\n");
+    }
+    printf("\n");
+}
+
+void sr_str(int n, int m, int a[n][m])
+{
+    float s = 0;
+    for (int j = 0; j < m; j++)
+    {
+        s = 0;
+        for (int i = 0; i < n; i++)
+        {
+            s += a[i][j];
+        }
+        printf(" %6f", s / n);
+    }
+}
+
+
+int main()
+{
+    srand(time(NULL));
+
+    int n;
+    printf("Enter n -> ");
+    scanf("%i", &n);
+
+    int m;
+    printf("Enter m -> ");
+    scanf("%i", &m);
+
+    int A[n][m];
+    fill(n, m, A);
+    printf(" mass = \n");
+    print_double_mas(n, m, A);
+    sr_str(n, m, A);
+    return 0;
+}
+
+
+
