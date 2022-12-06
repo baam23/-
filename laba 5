@@ -1,0 +1,38 @@
+#include <stdio.h> //laba 5
+
+int fr(int n);
+int fl(int n);
+
+int main()
+{
+    unsigned int n;
+    printf("n -> ");
+    scanf("%u", &n);
+    printf("fibonachi = %u\n", fl(n));
+    printf("fibonachi = %u\n", fr(n));
+    return 0;
+}
+
+int fr(int n)
+{
+    if (n == 1 || n == 2 ) {
+        return 1;
+    }
+    else
+    {
+        return fr(n - 1) + fr(n - 2);
+    }
+}
+
+int fl(int n)
+{
+    int x = 1;
+    int y = 1;
+
+    for (int i = 2; i < n; i++) {
+        y = x + y;
+        x = y - x;
+    }
+
+    return y;
+}
