@@ -1,0 +1,32 @@
+#include <stdio.h> // laba1
+#include <math.h>
+
+int main()
+{
+    int s = 0;
+    int a, b;
+    printf("Enter a -> ");
+    scanf("%d", &a);
+    printf("Enter b -> ");
+    scanf("%d", &b);
+
+    
+    s = 0;
+    while (a > 0) {
+        s += a % 10;
+        a /= 10;
+    }
+    if (s > b){
+    printf(" %d\n", s);
+    }
+ 
+    if (s == b) {
+        printf(" %d\n", b);
+    }
+
+    if (s < b) {
+        printf("%d\n", s + b);
+    }
+  
+    return 0;
+}
